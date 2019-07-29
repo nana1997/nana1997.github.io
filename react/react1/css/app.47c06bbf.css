@@ -1,0 +1,998 @@
+@charset "UTF-8";
+
+/********** 初始化样式 ***********/
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+dd,
+input,
+textarea {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+input,
+textarea {
+  outline: none;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  cursor: pointer;
+}
+
+/********************公共类名样式**************/
+
+.cl:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.cl {
+  zoom: 1;
+}
+
+.sl {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sl2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+html {
+  font-size: calc(100vw/7.5);
+}
+
+body {
+  font-size: .30rem;
+  color: #333;
+  font-family: "微软雅黑","宋体",Arial;
+}
+
+html,
+body,
+#app,
+.app {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}footer {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 11;
+  display: flex;
+  border-top: 0.01rem #eee solid;
+  background-size: 100% 100%;
+}
+
+footer div {
+  flex: 1;
+}
+
+footer div .active {
+  color: #f00;
+}
+
+footer div a {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 0.24rem;
+  padding: 0.08rem 0;
+  color: #666;
+  position: relative;
+}
+
+footer div a .iconfont {
+  margin-bottom: 0.1rem;
+  font-size: 0.4rem;
+}
+
+footer div a .dot {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.6rem;
+}.home {
+  padding: 0.84rem 0;
+}
+
+.home .lunbo {
+  padding: 0.2rem;
+  background-color: #fff;
+}
+
+.home .lunbo img {
+  width: 100%;
+  height: 4rem;
+  border-radius: 0.1rem;
+}
+
+.home .ullist li {
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border-bottom: 0.01rem #aaa solid;
+}
+
+.home .ullist li img {
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 0.2rem;
+}
+
+.home .ullist li h3 {
+  height: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  font-size: 0.44rem;
+}
+
+.home .ullist li h5 {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  color: #5dc5f0;
+}
+
+.home .ullist li h5 span {
+  margin: 0 0.2rem;
+}
+
+.home .ullist li h5 div {
+  float: right;
+  position: relative;
+  margin-right: 0.2rem;
+}
+
+.home .ullist li h5 .iconfont {
+  font-size: 0.5rem;
+  color: #f00;
+}
+
+.home .ullist li h5 .icon-shoucang {
+  display: none;
+}
+
+.home .ullist li h5 u {
+  position: absolute;
+  top: -0.3rem;
+  right: -0.1rem;
+  text-decoration: none;
+  color: #1873da;
+}
+
+.home .ullist li p {
+  padding: 0 0.5rem;
+  line-height: 0.5rem;
+}header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  text-align: center;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  border-bottom: 0.01rem #eee solid;
+  background-color: #fff;
+}
+
+header .iconfont {
+  font-size: 0.4rem;
+}
+
+header .i1 {
+  position: absolute;
+  left: 0.4rem;
+  top: 0;
+}
+
+header .i2 {
+  position: absolute;
+  right: 0.4rem;
+  top: 0;
+}
+
+header span {
+  font-size: 0.34rem;
+  color: #1178ed;
+  font-weight: 600;
+}
+
+header .i3 {
+  position: absolute;
+  left: 0.4rem;
+  top: 0;
+}
+
+header .i3 img {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}.discover {
+  padding: 0.84rem 0;
+}
+
+.discover .icon-fanhuidingbu {
+  position: fixed;
+  bottom: 2rem;
+  right: 0.5rem;
+  z-index: 11;
+  font-size: 0.7rem;
+  color: #166ee5;
+}
+
+.discover .ullist li {
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border-bottom: 0.01rem #aaa solid;
+}
+
+.discover .ullist li img {
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 0.2rem;
+}
+
+.discover .ullist li h3 {
+  padding: 0.3rem 0;
+  line-height: 0.56rem;
+  text-align: center;
+  font-size: 0.44rem;
+}
+
+.discover .ullist li h5 {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  color: #5dc5f0;
+}
+
+.discover .ullist li h5 span {
+  margin: 0 0.2rem;
+}
+
+.discover .ullist li h5 div {
+  float: right;
+  position: relative;
+  margin-right: 0.2rem;
+}
+
+.discover .ullist li h5 .iconfont {
+  font-size: 0.5rem;
+  color: #f00;
+}
+
+.discover .ullist li h5 .icon-shoucang {
+  display: none;
+}
+
+.discover .ullist li h5 u {
+  position: absolute;
+  top: -0.3rem;
+  right: -0.1rem;
+  text-decoration: none;
+  color: #1873da;
+}
+
+.discover .ullist li p {
+  padding: 0 0.5rem;
+  line-height: 0.5rem;
+}.square {
+  padding: 0.84rem 0;
+}
+
+.square .content p {
+  margin-top: 2rem;
+  font-size: 0.7rem;
+  color: #999;
+  text-align: center;
+}.mine {
+  padding-bottom: 0.84rem;
+}
+
+.mine .photo {
+  text-align: center;
+  height: 3.5rem;
+  padding-top: 0.5rem;
+  background-color: #71b1f9;
+}
+
+.mine .photo img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.mine .photo input {
+  display: none;
+}
+
+.mine .photo .user {
+  margin-top: 0.3rem;
+}
+
+.mine .photo .user button {
+  padding: 0.2rem 0.3rem;
+  border: 0;
+  border-radius: 0.2rem;
+  background-color: #f15011;
+  color: #fff;
+}
+
+.mine .photo .user p {
+  font-size: 0.4rem;
+  color: #666;
+}
+
+.mine ul {
+  margin-top: 0.4rem;
+  padding: 0 0.4rem 0;
+}
+
+.mine ul li {
+  padding-left: 0.3rem;
+  border-bottom: 0.01rem #ccc solid;
+  height: 1rem;
+  line-height: 1rem;
+  position: relative;
+  color: #666;
+}
+
+.mine ul li .i1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0.34rem;
+}
+
+.mine ul li span {
+  margin-left: 0.3rem;
+}
+
+.mine ul li .i2 {
+  float: right;
+  font-size: 0.34rem;
+}.search {
+  padding: 1.64rem 0 0 0;
+}
+
+.search .input {
+  position: fixed;
+  width: 90%;
+  top: 0.8rem;
+  background-color: #eee;
+  height: 0.7rem;
+  padding: 0.2rem 5%;
+}
+
+.search .input input {
+  border: 0;
+  width: 70%;
+  height: 0.7rem;
+  background-color: #fff;
+  border-radius: 0.1rem;
+  padding: 0 0.3rem;
+}
+
+.search .input button {
+  border: 0;
+  background-color: #2b79ee;
+  width: 1.3rem;
+  height: 0.7rem;
+  float: right;
+  color: #fff;
+  border-radius: 0.1rem;
+}
+
+.search .content li {
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border-bottom: 0.01rem #aaa solid;
+}
+
+.search .content li img {
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 0.2rem;
+}
+
+.search .content li h3 {
+  padding: 0.3rem 0;
+  line-height: 0.56rem;
+  text-align: center;
+  font-size: 0.44rem;
+}
+
+.search .content li h5 {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  color: #5dc5f0;
+}
+
+.search .content li h5 span {
+  margin: 0 0.2rem;
+}
+
+.search .content li h5 div {
+  float: right;
+  position: relative;
+  margin-right: 0.2rem;
+}
+
+.search .content li h5 .iconfont {
+  font-size: 0.5rem;
+  color: #f00;
+}
+
+.search .content li h5 .icon-shoucang {
+  display: none;
+}
+
+.search .content li h5 u {
+  position: absolute;
+  top: -0.3rem;
+  right: -0.1rem;
+  text-decoration: none;
+  color: #1873da;
+}
+
+.search .content li p {
+  padding: 0 0.5rem;
+  line-height: 0.5rem;
+}
+
+.header {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  text-align: center;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  border: 0.01rem #eee solid;
+}
+
+.header .iconfont {
+  font-size: 0.4rem;
+}
+
+.header .i1 {
+  position: absolute;
+  left: 0.4rem;
+  top: 0;
+}
+
+.header .i2 {
+  position: absolute;
+  right: 0.4rem;
+  top: 0;
+}
+
+.header span {
+  font-size: 0.34rem;
+}
+
+.header .i3 {
+  position: absolute;
+  right: 0.4rem;
+  top: 0;
+}
+
+.header .i3 img {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}.login {
+  padding: 0.84rem 0;
+}
+
+.login .input {
+  padding: 0.2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.login .input p {
+  position: relative;
+}
+
+.login .input p i {
+  position: absolute;
+  top: 0.3rem;
+  left: 0.4rem;
+  font-size: 0.46rem;
+  color: #666;
+}
+
+.login .input p input {
+  width: 70%;
+  height: 1rem;
+  line-height: 1rem;
+  background-color: #fff;
+  padding: 0 15%;
+  margin-bottom: 0.3rem;
+  border: 0;
+  border-radius: 0.2rem;
+}
+
+.login .input p button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff5100;
+  color: #fff;
+  border: 0;
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.4rem;
+  font-size: 0.32rem;
+}
+
+.login .input .btn {
+  background-color: #2574eb;
+  border: 0;
+  width: 100%;
+  border-radius: 0.2rem;
+  color: #fff;
+  padding: 0.3rem 0;
+  font-size: 0.32rem;
+}.register {
+  padding: 0.84rem 0;
+}
+
+.register .input {
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.register .input .p1,
+.register .input .p2,
+.register .input .p3,
+.register .input .p4,
+.register .input .p5 {
+  position: relative;
+}
+
+.register .input .p1 .i1,
+.register .input .p2 .i1,
+.register .input .p3 .i1,
+.register .input .p4 .i1,
+.register .input .p5 .i1 {
+  position: absolute;
+  top: 0.26rem;
+  left: 0.4rem;
+  font-size: 0.48rem;
+  color: #666;
+}
+
+.register .input .p1 .i2,
+.register .input .p2 .i2,
+.register .input .p3 .i2,
+.register .input .p4 .i2,
+.register .input .p5 .i2 {
+  display: none;
+  position: absolute;
+  top: 0.26rem;
+  right: 0.4rem;
+  font-size: 0.48rem;
+  color: green;
+}
+
+.register .input .p1 span,
+.register .input .p2 span,
+.register .input .p3 span,
+.register .input .p4 span,
+.register .input .p5 span {
+  display: none;
+  position: absolute;
+  top: 0.54rem;
+  right: 0.4rem;
+  font-size: 0.28rem;
+  color: #f00;
+}
+
+.register .input .p1 input,
+.register .input .p2 input,
+.register .input .p3 input,
+.register .input .p4 input,
+.register .input .p5 input {
+  width: 70%;
+  height: 1rem;
+  line-height: 1rem;
+  background-color: #fff;
+  padding: 0 15%;
+  margin-bottom: 0.3rem;
+  border: 0;
+  border-radius: 0.2rem;
+}
+
+.register .input .p1 button,
+.register .input .p2 button,
+.register .input .p3 button,
+.register .input .p4 button,
+.register .input .p5 button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff5100;
+  color: #fff;
+  border: 0;
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.4rem;
+  font-size: 0.32rem;
+}
+
+.register .input .p1 .i1,
+.register .input .p5 .i1 {
+  font-size: 0.4rem;
+}
+
+.register .input .button {
+  background-color: #2574eb;
+  border: 0;
+  width: 100%;
+  border-radius: 0.2rem;
+  color: #fff;
+  padding: 0.3rem 0;
+  font-size: 0.32rem;
+}
+
+.register .input button[disabled] {
+  opacity: .5;
+  filter: alpha(opacity=50);
+}.detail {
+  padding: 0.84rem 0 0 0;
+}
+
+.detail .content {
+  padding: 0.2rem 0.3rem;
+  border-bottom: 0.01rem solid #ddd;
+}
+
+.detail .content .img1 img {
+  width: 100%;
+  height: 4rem;
+  border-radius: 0.2rem;
+}
+
+.detail .content .img1 span {
+  color: #ec550f;
+}
+
+.detail .content h1,
+.detail .content h2,
+.detail .content h4,
+.detail .content h5,
+.detail .content h6 {
+  font-weight: normal;
+}
+
+.detail .content h6 {
+  height: 0.4rem;
+  line-height: 0.4rem;
+}
+
+.detail .content h6 span {
+  float: right;
+}
+
+.detail .content h2 {
+  height: 1.2rem;
+  line-height: 1.2rem;
+  font-size: 0.5rem;
+}
+
+.detail .content h5 {
+  height: 0.5rem;
+  line-height: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.detail .content h4 {
+  line-height: 0.6rem;
+  font-size: 0.34rem;
+  text-indent: 0.7rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 0.01rem #aaa solid;
+}
+
+.detail .content h3 {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.36rem;
+  margin: 0.8rem 0;
+}
+
+.detail .content p {
+  font-size: 0.32rem;
+  text-indent: 0.7rem;
+  line-height: 0.6rem;
+  padding: 0.4rem;
+}
+
+.detail .icon {
+  height: 1.2rem;
+  line-height: 1.2rem;
+  text-align: right;
+  padding-right: 0.8rem;
+  position: fixed;
+  top: 0.9rem;
+  right: -0.5rem;
+}
+
+.detail .icon i {
+  font-size: 0.5rem;
+  padding: 0 0.3rem;
+  color: #999;
+}
+
+.detail .icon span {
+  position: absolute;
+  top: -0.18rem;
+  right: 1.9rem;
+}
+
+.detail .pinglun {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc000000', endColorstr='#cc000000');
+  display: none;
+}
+
+:root .detail .pinglun {
+  -webkit-filter: none\9;
+  filter: none\9;
+}
+
+.detail .pinglun div {
+  width: 70%;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.detail .pinglun div textarea {
+  width: 4rem;
+  height: 3rem;
+  padding: 0.2rem 0.3rem;
+  border: 0;
+  border-radius: 0.3rem;
+  background-color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.detail .pinglun div .button1 {
+  padding: 0.3rem 0.3rem;
+  border: 0;
+  border-radius: 0.3rem;
+  background-color: #00f;
+  color: #fff;
+  margin-right: 0.2rem;
+}
+
+.detail .pinglun div .button2 {
+  padding: 0.3rem 0.3rem;
+  border: 0;
+  border-radius: 0.3rem;
+  background-color: #f00;
+  color: #fff;
+  margin-left: 0.2rem;
+}
+
+.detail .msg {
+  text-align: left;
+  padding: 0.3rem;
+}
+
+.detail .msg div {
+  padding: 0.3rem 0;
+  color: #666;
+}
+
+.detail .msg .icon-shanchu {
+  float: right;
+}.detail {
+  padding-top: 0.84rem;
+}
+
+.detail .content {
+  padding: 0.2rem 0.3rem;
+}
+
+.detail .content .img1 img {
+  width: 100%;
+  height: 4rem;
+  border-radius: 0.2rem;
+}
+
+.detail .content .img1 span {
+  color: #ec550f;
+}
+
+.detail .content h1,
+.detail .content h2,
+.detail .content h4,
+.detail .content h5,
+.detail .content h6 {
+  font-weight: normal;
+}
+
+.detail .content h6 {
+  height: 0.4rem;
+  line-height: 0.4rem;
+}
+
+.detail .content h6 span {
+  float: right;
+}
+
+.detail .content h2 {
+  height: 1.8rem;
+  line-height: 0.8rem;
+  font-size: 0.5rem;
+}
+
+.detail .content h5 {
+  height: 0.5rem;
+  line-height: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.detail .content h4 {
+  line-height: 0.6rem;
+  font-size: 0.34rem;
+  text-indent: 0.7rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 0.01rem #aaa solid;
+}
+
+.detail .content h3 {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.36rem;
+  margin: 0.8rem 0;
+}
+
+.detail .content p {
+  font-size: 0.32rem;
+  text-indent: 0.7rem;
+  line-height: 0.6rem;
+  padding: 0.4rem;
+}.myFavorite {
+  padding-top: 0.84rem;
+}
+
+.myFavorite header {
+  height: 0.8rem;
+  position: fixed;
+}
+
+.myFavorite header i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-left: 0.3rem;
+  color: #666;
+}
+
+.myFavorite .p1 {
+  margin: 3rem auto;
+  text-align: center;
+  font-size: 0.6rem;
+  color: #666;
+}
+
+.myFavorite .content li {
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border-bottom: 0.01rem #aaa solid;
+}
+
+.myFavorite .content li img {
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 0.2rem;
+}
+
+.myFavorite .content li h3 {
+  padding: 0.3rem 0;
+  line-height: 0.56rem;
+  text-align: center;
+  font-size: 0.44rem;
+}
+
+.myFavorite .content li h5 {
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  color: #5dc5f0;
+}
+
+.myFavorite .content li h5 span {
+  margin: 0 0.2rem;
+}
+
+.myFavorite .content li h5 div {
+  float: right;
+  position: relative;
+  margin-right: 0.2rem;
+}
+
+.myFavorite .content li h5 .iconfont {
+  font-size: 0.5rem;
+  color: #f00;
+}
+
+.myFavorite .content li h5 .icon-shoucang {
+  display: none;
+}
+
+.myFavorite .content li h5 u {
+  position: absolute;
+  top: -0.3rem;
+  right: -0.1rem;
+  text-decoration: none;
+  color: #1873da;
+}
+
+.myFavorite .content li p {
+  padding: 0 0.5rem;
+  line-height: 0.5rem;
+}
+/*# sourceMappingURL=app.47c06bbf.css.map*/
