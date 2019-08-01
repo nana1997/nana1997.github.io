@@ -8,6 +8,11 @@
         <view class="author">{{info.author}}</view>
         <view class="state">{{info.state}}</view>
         <view class="content">{{info.content}}</view>
+        <div class="icon">
+            <img :src="url1" @click="changeurl1">
+            <img :src="url2" @click="changeurl2">
+            <img :src="url3" @click="changeurl3">
+        </div>
     </div>
 </template>
 
@@ -15,8 +20,22 @@
 export default {
     data() {
         return {
-            info: {}
+            info: {},
+            url1:"../../static/images/shoucang1.png",
+            url2:"../../static/images/dianzan1.png",
+            url3:"../../static/images/pinglun1.png"
         };
+    },
+    methods:{
+        changeurl1(){
+            this.url1="../../static/images/shoucang2.png"
+        },
+        changeurl2(){
+            this.url2="../../static/images/dianzan2.png"
+        },
+        changeurl3(){
+            this.url3="../../static/images/pinglun2.png"
+        }
     },
     mounted() {
         const { id } = this.$mp.query;
@@ -46,6 +65,21 @@ export default {
 </script>
 
 <style scoped>
+.icon{
+    position:fixed;
+    top: 40px;
+    right: 30px;
+    width: 190px;
+    height: 60px;
+}
+.icon img{
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+}
+i{
+    height: 60px;
+}
 .detail{
     padding: 20px 30px;
 }

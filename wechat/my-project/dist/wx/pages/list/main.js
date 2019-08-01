@@ -106,34 +106,12 @@ if (false) {(function () {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     data: function data() {
         return {
             list: [],
-            value: "",
-            searchList: [],
-            searchShow: false,
-            listShow: true
+            value: ""
         };
     },
 
@@ -146,69 +124,71 @@ if (false) {(function () {
         goSearch: function goSearch() {
             var _this = this;
 
+            // console.log(this)
             var searchInput = this.value;
+            if (searchInput === "") {
+                this.reqList();
+            } else {
+                global.mpvue.showLoading({
+                    //显示消息提示框  此处是提升用户体验的作用
+                    title: "数据加载中",
+                    icon: "loading"
+                });
+                global.mpvue.request({
+                    url: "http://47.102.140.68:1903/react/search",
+                    method: "POST", //请求方式
+                    header: {
+                        "content-type": "application/json" // 默认值
+                    },
+                    data: { title: searchInput },
+                    complete: function complete() {
+                        //请求结束后隐藏 loading 提示框
+                        global.mpvue.hideLoading();
+                    },
+
+                    success: function success(res) {
+                        // console.log(res)
+                        _this.list = res.data.result;
+                    }
+                });
+            }
+        },
+        goDetail: function goDetail(e) {
+            //获取传递的值
+            // console.log("e",e)
+            global.mpvue.navigateTo({
+                //跳转详情页  切记配置app.json文件
+                url: "../detail/main?id=" + e //传递参数
+            });
+        },
+        reqList: function reqList() {
+            var _this2 = this;
+
             global.mpvue.showLoading({
                 //显示消息提示框  此处是提升用户体验的作用
                 title: "数据加载中",
                 icon: "loading"
             });
             global.mpvue.request({
-                url: "http://47.102.140.68:1903/react/search",
+                url: "http://47.102.140.68:1903/react/discoverlist",
                 method: "POST", //请求方式
                 header: {
                     "content-type": "application/json" // 默认值
                 },
-                data: { title: searchInput },
                 complete: function complete() {
                     //请求结束后隐藏 loading 提示框
                     global.mpvue.hideLoading();
                 },
 
                 success: function success(res) {
-                    // console.log(res)
-                    _this.searchList = res.data.result;
-                    _this.searchShow = true;
-                    _this.listShow = false;
+                    // console.log(res);
+                    _this2.list = res.data.result;
                 }
-            });
-        },
-        goDetail: function goDetail(e) {
-            //获取传递的值
-            console.log("e", e);
-            global.mpvue.navigateTo({
-                //跳转详情页  切记配置app.json文件
-                url: "../detail/main?id=" + e //传递参数
             });
         }
     },
-
-    created: function created() {
-        // let app = getApp()
-    },
     mounted: function mounted() {
-        var _this2 = this;
-
-        global.mpvue.showLoading({
-            //显示消息提示框  此处是提升用户体验的作用
-            title: "数据加载中",
-            icon: "loading"
-        });
-        global.mpvue.request({
-            url: "http://47.102.140.68:1903/react/discoverlist",
-            method: "POST", //请求方式
-            header: {
-                "content-type": "application/json" // 默认值
-            },
-            complete: function complete() {
-                //请求结束后隐藏 loading 提示框
-                global.mpvue.hideLoading();
-            },
-
-            success: function success(res) {
-                // console.log(res);
-                _this2.list = res.data.result;
-            }
-        });
+        this.reqList();
     }
 });
 
@@ -219,7 +199,9 @@ if (false) {(function () {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('view', {
+  return _c('div', {
+    staticClass: "list"
+  }, [_c('view', {
     staticClass: "search"
   }, [_c('input', {
     staticClass: "input",
@@ -238,9 +220,9 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     on: {
       "click": _vm.goSearch
     }
-  }, [_vm._v("搜索")]), _vm._v(" "), (_vm.searchShow) ? _c('view', {
+  }, [_vm._v("搜索")])], 1), _vm._v(" "), _c('view', {
     staticClass: "content"
-  }, _vm._l((_vm.searchList), function(item, index) {
+  }, _vm._l((_vm.list), function(item, index) {
     return _c('view', {
       key: index,
       staticClass: "li",
@@ -270,39 +252,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }, [_vm._v(_vm._s(item.date))])]), _vm._v(" "), _c('view', {
       staticClass: "p"
     }, [_vm._v(_vm._s(item.state))])])
-  })) : _vm._e()], 1), _vm._v(" "), (_vm.listShow) ? _c('view', {
-    staticClass: "content"
-  }, _vm._l((_vm.list), function(item, index) {
-    return _c('view', {
-      key: index,
-      staticClass: "li",
-      attrs: {
-        "eventid": '3_' + index
-      },
-      on: {
-        "click": function($event) {
-          _vm.goDetail(item._id)
-        }
-      }
-    }, [_c('view', {
-      staticClass: "img"
-    }, [_c('image', {
-      staticClass: "image",
-      attrs: {
-        "src": item.img
-      }
-    })]), _vm._v(" "), _c('view', {
-      staticClass: "h3"
-    }, [_vm._v(_vm._s(item.title))]), _vm._v(" "), _c('view', {
-      staticClass: "h5"
-    }, [_c('text', {
-      staticClass: "author"
-    }, [_vm._v(_vm._s(item.author))]), _vm._v(" "), _c('text', {
-      staticClass: "date"
-    }, [_vm._v(_vm._s(item.date))])]), _vm._v(" "), _c('view', {
-      staticClass: "p"
-    }, [_vm._v(_vm._s(item.state))])])
-  })) : _vm._e()])
+  }))])
 }
 var staticRenderFns = []
 render._withStripped = true

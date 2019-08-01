@@ -8,5 +8,10 @@
     <view class="_view data-v-c6eb783a author">{{info.author}}</view>
     <view class="_view data-v-c6eb783a state">{{info.state}}</view>
     <view class="_view data-v-c6eb783a content">{{info.content}}</view>
+    <view class="_div data-v-c6eb783a icon">
+      <image src="{{url1}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_img data-v-c6eb783a"></image>
+      <image src="{{url2}}" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}" class="_img data-v-c6eb783a"></image>
+      <image src="{{url3}}" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}" class="_img data-v-c6eb783a"></image>
+    </view>
   </view>
 </template>

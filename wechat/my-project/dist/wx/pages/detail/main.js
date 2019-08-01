@@ -89,12 +89,32 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     data: function data() {
         return {
-            info: {}
+            info: {},
+            url1: "../../static/images/shoucang1.png",
+            url2: "../../static/images/dianzan1.png",
+            url3: "../../static/images/pinglun1.png"
         };
+    },
+
+    methods: {
+        changeurl1: function changeurl1() {
+            this.url1 = "../../static/images/shoucang2.png";
+        },
+        changeurl2: function changeurl2() {
+            this.url2 = "../../static/images/dianzan2.png";
+        },
+        changeurl3: function changeurl3() {
+            this.url3 = "../../static/images/pinglun2.png";
+        }
     },
     mounted: function mounted() {
         var _this = this;
@@ -158,7 +178,33 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "state"
   }, [_vm._v(_vm._s(_vm.info.state))]), _vm._v(" "), _c('view', {
     staticClass: "content"
-  }, [_vm._v(_vm._s(_vm.info.content))])])
+  }, [_vm._v(_vm._s(_vm.info.content))]), _vm._v(" "), _c('div', {
+    staticClass: "icon"
+  }, [_c('img', {
+    attrs: {
+      "src": _vm.url1,
+      "eventid": '0'
+    },
+    on: {
+      "click": _vm.changeurl1
+    }
+  }), _vm._v(" "), _c('img', {
+    attrs: {
+      "src": _vm.url2,
+      "eventid": '1'
+    },
+    on: {
+      "click": _vm.changeurl2
+    }
+  }), _vm._v(" "), _c('img', {
+    attrs: {
+      "src": _vm.url3,
+      "eventid": '2'
+    },
+    on: {
+      "click": _vm.changeurl3
+    }
+  })])])
 }
 var staticRenderFns = []
 render._withStripped = true

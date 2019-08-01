@@ -1,4 +1,19 @@
 
+.icon.data-v-c6eb783a {
+  position: fixed;
+  top: 80rpx;
+  right: 60rpx;
+  width: 380rpx;
+  height: 120rpx;
+}
+.icon ._img.data-v-c6eb783a {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 60rpx;
+}
+._i.data-v-c6eb783a {
+  height: 120rpx;
+}
 .detail.data-v-c6eb783a {
   padding: 40rpx 60rpx;
 }
