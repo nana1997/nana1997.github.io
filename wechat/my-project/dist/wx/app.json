@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/list/main",
+    "pages/index/main",
+    "pages/logs/main",
+    "pages/counter/main",
+    
+    "pages/detail/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1b6ae0",
+    "navigationBarTitleText": "发现",
+    "navigationBarTextStyle": "white"
+  }
+}

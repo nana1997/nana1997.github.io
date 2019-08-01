@@ -1,0 +1,26 @@
+<template name="3d8785cb">
+  <view class="_div data-v-b6e2bca0">
+    <view class="_view data-v-b6e2bca0 search"><input class="_input data-v-b6e2bca0 input" placeholder="输入搜索内容..." bindblur="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" /> <button class="_button data-v-b6e2bca0 button" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">搜索</button>
+      <view class="_view data-v-b6e2bca0 content" wx:if="{{searchShow}}">
+        <view class="_view data-v-b6e2bca0 li" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'2_'+index}}" data-comkey="{{$k}}" wx:for="{{searchList}}" wx:for-index="index" wx:for-item="item">
+          <view class="_view data-v-b6e2bca0 img">
+            <image class="_image data-v-b6e2bca0 image" src="{{item.img}}"></image>
+          </view>
+          <view class="_view data-v-b6e2bca0 h3">{{item.title}}</view>
+          <view class="_view data-v-b6e2bca0 h5"><text class="_text data-v-b6e2bca0 author">{{item.author}}</text> <text class="_text data-v-b6e2bca0 date">{{item.date}}</text></view>
+          <view class="_view data-v-b6e2bca0 p">{{item.state}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-b6e2bca0 content" wx:if="{{listShow}}">
+      <view class="_view data-v-b6e2bca0 li" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'3_'+index}}" data-comkey="{{$k}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
+        <view class="_view data-v-b6e2bca0 img">
+          <image class="_image data-v-b6e2bca0 image" src="{{item.img}}"></image>
+        </view>
+        <view class="_view data-v-b6e2bca0 h3">{{item.title}}</view>
+        <view class="_view data-v-b6e2bca0 h5"><text class="_text data-v-b6e2bca0 author">{{item.author}}</text> <text class="_text data-v-b6e2bca0 date">{{item.date}}</text></view>
+        <view class="_view data-v-b6e2bca0 p">{{item.state}}</view>
+      </view>
+    </view>
+  </view>
+</template>

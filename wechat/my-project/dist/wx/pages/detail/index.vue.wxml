@@ -1,0 +1,12 @@
+<template name="71895dfe">
+  <view class="_div data-v-c6eb783a detail">
+    <view class="_view data-v-c6eb783a img">
+      <image src="{{info.img}}" class="_image data-v-c6eb783a"></image>
+    </view>
+    <view class="_view data-v-c6eb783a date">{{info.date}}</view>
+    <view class="_view data-v-c6eb783a title">{{info.title}}</view>
+    <view class="_view data-v-c6eb783a author">{{info.author}}</view>
+    <view class="_view data-v-c6eb783a state">{{info.state}}</view>
+    <view class="_view data-v-c6eb783a content">{{info.content}}</view>
+  </view>
+</template>
