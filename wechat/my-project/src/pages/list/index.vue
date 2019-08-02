@@ -95,7 +95,11 @@ export default {
             });
         }
     },
+    onShareAppMessage: function(options) {},
     mounted() {
+        mpvue.showShareMenu({
+            withShareTicket: true
+        })
         this.reqList()
     }
 };

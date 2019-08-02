@@ -23,11 +23,11 @@ app.$mount();
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_template_compiler_index_id_data_v_c6eb783a_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_fileExt_template_wxml_script_js_style_wxss_platform_wx_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_template_compiler_index_id_data_v_c6eb783a_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_fileExt_template_wxml_script_js_style_wxss_platform_wx_node_modules_mpvue_loader_2_0_1_mpvue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(19);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(49)
+  __webpack_require__(17)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
@@ -72,6 +72,13 @@ if (false) {(function () {
 
 /***/ }),
 
+/***/ 17:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 18:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -89,36 +96,21 @@ if (false) {(function () {
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     data: function data() {
         return {
-            info: {},
-            url1: "../../static/images/shoucang1.png",
-            url2: "../../static/images/dianzan1.png",
-            url3: "../../static/images/pinglun1.png"
+            info: {}
         };
     },
 
-    methods: {
-        changeurl1: function changeurl1() {
-            this.url1 = "../../static/images/shoucang2.png";
-        },
-        changeurl2: function changeurl2() {
-            this.url2 = "../../static/images/dianzan2.png";
-        },
-        changeurl3: function changeurl3() {
-            this.url3 = "../../static/images/pinglun2.png";
-        }
-    },
+    onShareAppMessage: function onShareAppMessage(options) {},
     mounted: function mounted() {
         var _this = this;
 
+        global.mpvue.showShareMenu({
+            withShareTicket: true
+        });
         var id = this.$mp.query.id;
 
         global.mpvue.showLoading({
@@ -148,14 +140,7 @@ if (false) {(function () {
 
 /***/ }),
 
-/***/ 49:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 50:
+/***/ 19:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -178,33 +163,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "state"
   }, [_vm._v(_vm._s(_vm.info.state))]), _vm._v(" "), _c('view', {
     staticClass: "content"
-  }, [_vm._v(_vm._s(_vm.info.content))]), _vm._v(" "), _c('div', {
-    staticClass: "icon"
-  }, [_c('img', {
-    attrs: {
-      "src": _vm.url1,
-      "eventid": '0'
-    },
-    on: {
-      "click": _vm.changeurl1
-    }
-  }), _vm._v(" "), _c('img', {
-    attrs: {
-      "src": _vm.url2,
-      "eventid": '1'
-    },
-    on: {
-      "click": _vm.changeurl2
-    }
-  }), _vm._v(" "), _c('img', {
-    attrs: {
-      "src": _vm.url3,
-      "eventid": '2'
-    },
-    on: {
-      "click": _vm.changeurl3
-    }
-  })])])
+  }, [_vm._v(_vm._s(_vm.info.content))])])
 }
 var staticRenderFns = []
 render._withStripped = true

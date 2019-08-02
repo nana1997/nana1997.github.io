@@ -187,7 +187,11 @@ if (false) {(function () {
             });
         }
     },
+    onShareAppMessage: function onShareAppMessage(options) {},
     mounted: function mounted() {
+        global.mpvue.showShareMenu({
+            withShareTicket: true
+        });
         this.reqList();
     }
 });
