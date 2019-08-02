@@ -1,8 +1,9 @@
 <template name="3d8785cb">
   <view class="_div data-v-b6e2bca0 list">
     <view class="_view data-v-b6e2bca0 search"><input class="_input data-v-b6e2bca0 input" placeholder="输入搜索内容..." bindblur="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" /> <button class="_button data-v-b6e2bca0 button" bindtap="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">搜索</button></view>
+    <view class="_div data-v-b6e2bca0 mv" bindtap="handleProxy" data-eventid="{{'2'}}" data-comkey="{{$k}}"> 点击观看MV放松一下吧! </view>
     <view class="_view data-v-b6e2bca0 content">
-      <view class="_view data-v-b6e2bca0 li" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'2_'+index}}" data-comkey="{{$k}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
+      <view class="_view data-v-b6e2bca0 li" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'3_'+index}}" data-comkey="{{$k}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
         <view class="_view data-v-b6e2bca0 img">
           <image class="_image data-v-b6e2bca0 image" src="{{item.img}}"></image>
         </view>

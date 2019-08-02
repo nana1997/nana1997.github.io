@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .detail.data-v-c6eb783a {
   padding: 40rpx 60rpx;

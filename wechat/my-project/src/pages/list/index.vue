@@ -4,6 +4,9 @@
             <input class="input" placeholder="输入搜索内容..." @change="listenInput" />
             <button class="button" @click="goSearch">搜索</button>
         </view>
+        <div class="mv" @click="goVideo">
+            点击观看MV放松一下吧!
+        </div>
 
         <view class="content">
             <view class="li" v-for="(item,index) in list" :key="index" @click="goDetail(item._id)">
@@ -64,6 +67,11 @@ export default {
                 });
             }
         },
+        goVideo(){
+            mpvue.navigateTo({
+                url: "../video/main"
+            });
+        },
         goDetail(e) {
             //获取传递的值
             // console.log("e",e)
@@ -107,6 +115,17 @@ export default {
 
 <style scoped>
 /* pages/list/list.wxss */
+.mv{
+    width: 90%;
+    margin: 60px auto 0;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #099ff5;
+    border-radius: 10px;
+}
 .search {
     position: fixed;
     top: 0;
@@ -135,7 +154,7 @@ export default {
     margin-right: 5%;
 }
 .content {
-    padding: 60px 30px 0 30px;
+    padding: 0 30px;
 }
 .li {
     padding: 20px 0;

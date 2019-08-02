@@ -1,4 +1,16 @@
+@import "../../common/vendor.wxss";
 
+.mv.data-v-b6e2bca0 {
+  width: 90%;
+  margin: 120rpx auto 0;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 36rpx;
+  color: #fff;
+  background-color: #099ff5;
+  border-radius: 20rpx;
+}
 .search.data-v-b6e2bca0 {
   position: fixed;
   top: 0;
@@ -27,7 +39,7 @@
   margin-right: 5%;
 }
 .content.data-v-b6e2bca0 {
-  padding: 120rpx 60rpx 0 60rpx;
+  padding: 0 60rpx;
 }
 .li.data-v-b6e2bca0 {
   padding: 40rpx 0;

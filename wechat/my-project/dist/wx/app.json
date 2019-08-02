@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/list/main",
     "pages/index/main",
+    "pages/list/main",
     "pages/logs/main",
     "pages/counter/main",
+    "pages/video/main",
     "pages/detail/main"
   ],
   "window": {
@@ -11,6 +12,5 @@
     "navigationBarBackgroundColor": "#1b6ae0",
     "navigationBarTitleText": "发现",
     "navigationBarTextStyle": "white"
-  },
-  "sitemapLocation": "sitemap10.json"
+  }
 }

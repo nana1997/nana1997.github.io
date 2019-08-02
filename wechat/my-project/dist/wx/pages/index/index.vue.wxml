@@ -1,3 +1,13 @@
-<template name="1b73fea1">
-  <view class="_div data-v-5eca2e54"></view>
+<import src="/components/card.vue.wxml" /><template name="1b73fea1">
+  <view class="_div data-v-5eca2e54">
+    <view class="_div data-v-5eca2e54 userinfo">
+      <image class="_img data-v-5eca2e54 userinfo-avatar" wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <view class="_div data-v-5eca2e54 userinfo-nickname"><template data="{{...$root[$kk+'0'], $root}}" is="265848c7"></template></view>
+      <view wx:if="{{userInfo.avatarUrl}}" class="_div data-v-5eca2e54 golist"><button bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_button data-v-5eca2e54">开始探索</button></view>
+    </view>
+    <view wx:if="{{!userInfo.avatarUrl}}" class="_div data-v-5eca2e54">
+      <view class="_view data-v-5eca2e54 tip">● 我们将获取您的公开信息(头像、昵称等)</view>
+      <view class="_view data-v-5eca2e54 login"><button class="_button data-v-5eca2e54 loginbtn" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'1'}}" data-comkey="{{$k}}">授权登录</button></view>
+    </view>
+  </view>
 </template>

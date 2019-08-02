@@ -1,6 +1,6 @@
 require("../../common/manifest.js")
 require("../../common/vendor.js")
-global.webpackJsonpMpvue([3],{
+global.webpackJsonpMpvue([4],{
 
 /***/ 25:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -106,6 +106,9 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     data: function data() {
@@ -152,6 +155,11 @@ if (false) {(function () {
                     }
                 });
             }
+        },
+        goVideo: function goVideo() {
+            global.mpvue.navigateTo({
+                url: "../video/main"
+            });
         },
         goDetail: function goDetail(e) {
             //获取传递的值
@@ -224,14 +232,22 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     on: {
       "click": _vm.goSearch
     }
-  }, [_vm._v("搜索")])], 1), _vm._v(" "), _c('view', {
+  }, [_vm._v("搜索")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "mv",
+    attrs: {
+      "eventid": '2'
+    },
+    on: {
+      "click": _vm.goVideo
+    }
+  }, [_vm._v("\n        点击观看MV放松一下吧!\n    ")]), _vm._v(" "), _c('view', {
     staticClass: "content"
   }, _vm._l((_vm.list), function(item, index) {
     return _c('view', {
       key: index,
       staticClass: "li",
       attrs: {
-        "eventid": '2_' + index
+        "eventid": '3_' + index
       },
       on: {
         "click": function($event) {

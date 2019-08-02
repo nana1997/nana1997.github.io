@@ -15,5 +15,6 @@ export default {
 <style>
 .card {
   padding: 10px;
+  font-size: 18px;
 }
 </style>
